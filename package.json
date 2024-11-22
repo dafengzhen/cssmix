@@ -1,0 +1,80 @@
+{
+  "name": "stylns",
+  "version": "0.0.0",
+  "description": "A utility for combining and processing style objects, arrays, and strings.",
+  "main": "./dist/stylns.umd.cjs",
+  "module": "./dist/stylns.js",
+  "types": "./dist/stylns.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/stylns.d.ts",
+      "import": "./dist/stylns.js",
+      "require": "./dist/stylns.umd.cjs"
+    }
+  },
+  "type": "module",
+  "scripts": {
+    "build": "tsc && vite build",
+    "coverage": "vitest run --coverage",
+    "dev": "vite",
+    "format": "prettier --write .",
+    "lint": "eslint . --fix",
+    "prepare": "husky install",
+    "preview": "vite preview",
+    "test": "vitest run src",
+    "test:dev": "vitest dev src",
+    "ui": "vitest --ui"
+  },
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dafengzhen/stylns.git"
+  },
+  "homepage": "https://github.com/dafengzhen/stylns#readme",
+  "bugs": {
+    "url": "https://github.com/dafengzhen/stylns/issues"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^19.6.0",
+    "@commitlint/config-conventional": "^19.6.0",
+    "@commitlint/prompt-cli": "^19.6.0",
+    "@eslint/js": "^9.15.0",
+    "@vitest/coverage-v8": "^2.1.5",
+    "@vitest/ui": "^2.1.5",
+    "eslint": "^9.15.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-perfectionist": "^4.0.3",
+    "globals": "^15.12.0",
+    "husky": "^9.1.7",
+    "prettier": "^3.3.3",
+    "typescript": "~5.6.3",
+    "typescript-eslint": "^8.15.0",
+    "vite": "^5.4.11",
+    "vite-plugin-dts": "^4.3.0",
+    "vitest": "^2.1.5"
+  },
+  "engines": {
+    "node": ">=22",
+    "npm": ">=10"
+  },
+  "keywords": [
+    "stylns",
+    "style",
+    "css",
+    "utility",
+    "merge",
+    "combine"
+  ],
+  "author": "dafengzhen",
+  "license": "MIT",
+  "lint-staged": {
+    "**/*": [
+      "npm run format",
+      "npm run lint",
+      "npm run test"
+    ]
+  },
+  "packageManager": "npm@10.9.0"
+}

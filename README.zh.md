@@ -1,10 +1,8 @@
 # stylns
 
-A utility for combining and processing style objects, arrays, and strings in a flexible and efficient way.
+一个用于组合和处理样式对象、数组和字符串的实用工具
 
-It simplifies managing inline styles and allows you to merge, process, and apply styles dynamically in JavaScript or
-TypeScript-based
-projects.
+它简化了内联样式的管理，并允许你动态地合并、处理和应用样式，适用于 JavaScript 或 TypeScript 项目
 
 <p>
   <a aria-label="Top language" href="https://github.com/dafengzhen/stylns/search?l=typescript">
@@ -15,29 +13,28 @@ projects.
   </a>
 </p>
 
-## Features
+## 特性
 
-- **Combine styles**: Merge multiple style objects or arrays into one.
-- **Process styles**: Handle conditional styles based on certain conditions or inputs.
-- **Flexible format**: Accepts styles in the form of objects, arrays, or strings.
-- **Lightweight**: A small utility with no dependencies.
+- **合并样式**: 将多个样式对象或数组合并为一个
+- **处理样式**: 根据特定条件或输入处理样式
+- **灵活格式**: 支持样式对象、数组或字符串格式
+- **轻量级**: 一个没有依赖的小工具
 
-## Installation
+## 安装
 
-You can install `stylns` via npm:
+你可以通过 npm 安装 `stylns`：
 
 ```bash
 npm install stylns
 ```
 
-## Usage
+## 使用
 
-Here are some common examples of how to use `stylns` to combine and process styles:
+以下是一些常见的 `stylns` 使用示例，展示如何合并和处理样式：
 
-### 1. Combine Style Objects
+### 1. 合并样式对象
 
-You can combine multiple style objects into one. If there are overlapping properties, the later ones will override the
-earlier ones.
+你可以将多个样式对象合并成一个。如果有重复的属性，后面的属性将覆盖前面的属性
 
 ```js
 import stylns from 'stylns';
@@ -47,12 +44,12 @@ const style2 = { backgroundColor: 'blue', fontSize: '16px' };
 
 const combinedStyle = stylns(style1, style2);
 console.log(combinedStyle);
-// Output: { color: 'red', fontSize: '16px', backgroundColor: 'blue' }
+// Output { color: 'red', fontSize: '16px', backgroundColor: 'blue' }
 ```
 
-### 2. Combine Style Arrays
+### 2. 合并样式数组
 
-You can also pass arrays of style objects or strings and `stylns` will merge them into one.
+你还可以传递样式对象或字符串的数组，`stylns` 会将它们合并成一个样式对象
 
 ```js
 const styles = [{ color: 'green' }, 'background-color: yellow;', { padding: '10px' }];
@@ -62,9 +59,9 @@ console.log(combinedStyles);
 // Output: { color: 'green', backgroundColor: 'yellow', padding: '10px' }
 ```
 
-### 3. Conditional Styles
+### 3. 条件样式
 
-You can conditionally apply styles based on a condition.
+你可以根据条件动态应用样式
 
 ```js
 const isDarkMode = true;
@@ -74,26 +71,26 @@ const lightModeStyle = { backgroundColor: 'white', color: 'black' };
 
 const activeStyle = stylns(isDarkMode ? darkModeStyle : lightModeStyle);
 console.log(activeStyle);
-// Output (if isDarkMode is true): { backgroundColor: 'black', color: 'white' }
+// Output（if isDarkMode is true）: { backgroundColor: 'black', color: 'white' }
 ```
 
 ## API
 
 ### `stylns(...styles)`
 
-- **Parameters**: Accepts a mix of style objects, arrays, and strings.
-- **Returns**: A merged style object.
+- **Parameters**: 接受样式对象、数组和字符串的混合
+- **Returns**: 合并后的样式对象
 
-### Example:
+### 示例：
 
 ```js
 stylns({ color: 'blue' }, { fontSize: '18px' });
 // Output: { color: 'blue', fontSize: '18px' }
 ```
 
-## Contributing
+## 其他
 
-Contributions are welcome! Please feel free to submit issues, forks, or pull requests.
+欢迎贡献！请随时提交问题、分支或拉取请求
 
 ## License
 

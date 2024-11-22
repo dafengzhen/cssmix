@@ -1,14 +1,14 @@
 import { describe, expect, it } from 'vitest';
 
-import stylns from './stylns';
+import cssmix from './cssmix.ts';
 
-describe('stylns Performance Tests', () => {
+describe('cssmix Performance Tests', () => {
   // Benchmark: Small input
   it('should handle small input efficiently', () => {
     const startTime = performance.now(); // Start timing
 
     // Small input data: simple style string and basic object
-    stylns('color: red;', { margin: '10px' });
+    cssmix('color: red;', { margin: '10px' });
 
     const endTime = performance.now(); // End timing
     const duration = endTime - startTime; // Calculate time difference
@@ -28,7 +28,7 @@ describe('stylns Performance Tests', () => {
     const largeInput = Array(1000)
       .fill('color: red;')
       .concat(Array(1000).fill({ margin: { top: '10px' }, padding: '5px' }));
-    stylns(...largeInput); // Process the large input
+    cssmix(...largeInput); // Process the large input
 
     const endTime = performance.now();
     const duration = endTime - startTime;
@@ -50,7 +50,7 @@ describe('stylns Performance Tests', () => {
       [[[{ fontSize: '12px' }]]], // Nested array containing an object
       { margin: { top: '10px' }, padding: '5px' }, // Nested object
     ];
-    stylns(...deepInput); // Process the deeply nested input
+    cssmix(...deepInput); // Process the deeply nested input
 
     const endTime = performance.now();
     const duration = endTime - startTime;
@@ -66,7 +66,7 @@ describe('stylns Performance Tests', () => {
   it('should handle concurrent calls efficiently', async () => {
     const promises = Array(100)
       .fill(0)
-      .map(() => stylns('color: red;', { margin: '10px' }));
+      .map(() => cssmix('color: red;', { margin: '10px' }));
     const startTime = performance.now();
     await Promise.all(promises); // Wait for all concurrent calls to complete
     const endTime = performance.now();
@@ -77,11 +77,11 @@ describe('stylns Performance Tests', () => {
   });
 });
 
-describe('stylns Performance Tests with Edge Cases', () => {
+describe('cssmix Performance Tests with Edge Cases', () => {
   // Test invalid values (undefined, null, false)
   it('should handle invalid values (undefined, null, false)', () => {
     const start = performance.now();
-    const result = stylns(undefined, null, false, 'color: red;', { margin: '10px' });
+    const result = cssmix(undefined, null, false, 'color: red;', { margin: '10px' });
     const end = performance.now();
     console.log(`Invalid values duration: ${end - start} ms`);
     expect(result).toEqual({ color: 'red', margin: '10px' }); // Invalid values should be ignored, valid styles should be processed
@@ -91,7 +91,7 @@ describe('stylns Performance Tests with Edge Cases', () => {
   // Test incorrectly formatted style strings
   it('should handle incorrectly formatted style strings', () => {
     const start = performance.now();
-    const result = stylns('color red', 'font-size 12px;', 'margin 10px');
+    const result = cssmix('color red', 'font-size 12px;', 'margin 10px');
     const end = performance.now();
     console.log(`Incorrect format duration: ${end - start} ms`);
     expect(result).toEqual({}); // Incorrect format should result in an empty object
@@ -101,7 +101,7 @@ describe('stylns Performance Tests with Edge Cases', () => {
   // Test handling duplicate styles correctly
   it('should handle duplicate styles correctly', () => {
     const start = performance.now();
-    const result = stylns('color: red;', { color: 'blue' }, 'color: green;');
+    const result = cssmix('color: red;', { color: 'blue' }, 'color: green;');
     const end = performance.now();
     console.log(`Duplicate styles duration: ${end - start} ms`);
     expect(result).toEqual({ color: 'green' }); // Last style value should overwrite previous ones
@@ -111,7 +111,7 @@ describe('stylns Performance Tests with Edge Cases', () => {
   // Test handling empty objects and arrays
   it('should handle empty objects and arrays', () => {
     const start = performance.now();
-    const result = stylns({}, [], '', null);
+    const result = cssmix({}, [], '', null);
     const end = performance.now();
     console.log(`Empty objects and arrays duration: ${end - start} ms`);
     expect(result).toEqual({}); // Empty objects and arrays should be ignored
@@ -121,7 +121,7 @@ describe('stylns Performance Tests with Edge Cases', () => {
   // Test deeply nested objects and ensure they are handled gracefully
   it('should handle nested objects gracefully', () => {
     const start = performance.now();
-    const result = stylns({ color: 'red', font: { size: '12px', weight: 'bold' } });
+    const result = cssmix({ color: 'red', font: { size: '12px', weight: 'bold' } });
     const end = performance.now();
     console.log(`Nested objects duration: ${end - start} ms`);
     expect(result).toEqual({

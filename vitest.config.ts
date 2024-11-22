@@ -4,7 +4,7 @@ export default defineConfig({
   test: {
     coverage: {
       enabled: true,
-      include: ['src/stylns.ts'],
+      include: ['src/cssmix.ts'],
       reporter: ['text', 'html', 'clover', 'json', 'json-summary'],
       reportOnFailure: true,
     },

@@ -7,9 +7,9 @@ export default defineConfig({
   build: {
     copyPublicDir: false,
     lib: {
-      entry: resolve(__dirname, 'src/stylns.ts'),
+      entry: resolve(__dirname, 'src/cssmix.ts'),
       formats: ['es', 'umd'],
-      name: 'Stylns',
+      name: 'Cssmix',
     },
     sourcemap: true,
   },

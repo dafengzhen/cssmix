@@ -1,15 +1,15 @@
 {
-  "name": "stylns",
+  "name": "cssmix",
   "version": "0.1.0",
   "description": "A utility for combining and processing style objects, arrays, and strings.",
-  "main": "./dist/stylns.umd.cjs",
-  "module": "./dist/stylns.js",
-  "types": "./dist/stylns.d.ts",
+  "main": "./dist/cssmix.umd.cjs",
+  "module": "./dist/cssmix.js",
+  "types": "./dist/cssmix.d.ts",
   "exports": {
     ".": {
-      "types": "./dist/stylns.d.ts",
-      "import": "./dist/stylns.js",
-      "require": "./dist/stylns.umd.cjs"
+      "types": "./dist/cssmix.d.ts",
+      "import": "./dist/cssmix.js",
+      "require": "./dist/cssmix.umd.cjs"
     }
   },
   "type": "module",
@@ -30,11 +30,11 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/dafengzhen/stylns.git"
+    "url": "https://github.com/dafengzhen/cssmix.git"
   },
-  "homepage": "https://github.com/dafengzhen/stylns#readme",
+  "homepage": "https://github.com/dafengzhen/cssmix#readme",
   "bugs": {
-    "url": "https://github.com/dafengzhen/stylns/issues"
+    "url": "https://github.com/dafengzhen/cssmix/issues"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.6.0",
@@ -49,7 +49,7 @@
     "globals": "^15.12.0",
     "husky": "^9.1.7",
     "prettier": "^3.3.3",
-    "typescript": "~5.6.3",
+    "typescript": "~5.7.2",
     "typescript-eslint": "^8.15.0",
     "vite": "^5.4.11",
     "vite-plugin-dts": "^4.3.0",
@@ -60,7 +60,7 @@
     "npm": ">=10"
   },
   "keywords": [
-    "stylns",
+    "cssmix",
     "style",
     "css",
     "utility",

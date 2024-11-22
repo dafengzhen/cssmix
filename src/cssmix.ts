@@ -3,12 +3,12 @@ export type StyleInput = Record<string, Record<string, StyleValue> | StyleValue>
 export type StyleValue = boolean | null | number | string | undefined;
 
 /**
- * stylns - A utility for combining and processing style objects, arrays, and strings.
+ * cssmix - A utility for combining and processing style objects, arrays, and strings.
  *
  * @param {...(string | object | Array<any> | null | undefined | boolean)} args - The styles to process.
  * @returns {Record<string, string>} - A merged style object.
  */
-export default function stylns(...args: StyleInput[]): Record<string, string> {
+export default function cssmix(...args: StyleInput[]): Record<string, string> {
   const result: Record<string, string> = {};
 
   for (const style of args) {

@@ -7,9 +7,6 @@ TypeScript-based
 projects.
 
 <p>
-  <a aria-label="Top language" href="https://github.com/dafengzhen/stylns/search?l=typescript">
-    <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/dafengzhen/stylns?style=flat-square&labelColor=000&color=blue">
-  </a>
   <a aria-label="Licence" href="https://github.com/dafengzhen/stylns/blob/main/LICENSE">
     <img alt="Licence" src="https://img.shields.io/github/license/dafengzhen/stylns?style=flat-quare&labelColor=000000" />
   </a>

@@ -5,9 +5,6 @@
 它简化了内联样式的管理，并允许你动态地合并、处理和应用样式，适用于 JavaScript 或 TypeScript 项目
 
 <p>
-  <a aria-label="Top language" href="https://github.com/dafengzhen/stylns/search?l=typescript">
-    <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/dafengzhen/stylns?style=flat-square&labelColor=000&color=blue">
-  </a>
   <a aria-label="Licence" href="https://github.com/dafengzhen/stylns/blob/main/LICENSE">
     <img alt="Licence" src="https://img.shields.io/github/license/dafengzhen/stylns?style=flat-quare&labelColor=000000" />
   </a>

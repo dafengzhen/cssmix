@@ -12,6 +12,8 @@ projects.
   </a>
 </p>
 
+[简体中文](./README.zh.md)
+
 ## Features
 
 - **Combine styles**: Merge multiple style objects or arrays into one.

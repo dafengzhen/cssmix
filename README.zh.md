@@ -55,7 +55,7 @@ const styles = [{ color: 'green' }, 'background-color: yellow;', { padding: '10p
 
 const combinedStyles = cssmix(...styles);
 console.log(combinedStyles);
-// Output: { color: 'green', backgroundColor: 'yellow', padding: '10px' }
+// Output: { color: 'green', 'background-color': 'yellow', padding: '10px' }
 ```
 
 ### 3. 条件样式

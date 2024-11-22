@@ -7,6 +7,12 @@ export default defineConfig({
       include: ['src/cssmix.ts'],
       reporter: ['text', 'html', 'clover', 'json', 'json-summary'],
       reportOnFailure: true,
+      thresholds: {
+        branches: 100,
+        functions: 100,
+        lines: 100,
+        statements: 100,
+      },
     },
   },
 });

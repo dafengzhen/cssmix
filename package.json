@@ -1,6 +1,6 @@
 {
   "name": "stylns",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "A utility for combining and processing style objects, arrays, and strings.",
   "main": "./dist/stylns.umd.cjs",
   "module": "./dist/stylns.js",

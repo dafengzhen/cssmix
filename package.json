@@ -1,6 +1,6 @@
 {
   "name": "cssmix",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A utility for combining and processing style objects, arrays, and strings.",
   "main": "./dist/cssmix.umd.cjs",
   "module": "./dist/cssmix.js",

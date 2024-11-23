@@ -2,7 +2,7 @@
 
 一个用于组合和处理样式对象、数组和字符串的实用工具
 
-它简化了内联样式的管理，并允许你动态地合并、处理和应用样式，适用于 JavaScript 或 TypeScript 项目
+它简化了 React 项目中内联样式的管理，使您能够动态地合并、处理和应用样式
 
 <p>
   <a aria-label="Licence" href="https://github.com/dafengzhen/cssmix/blob/main/LICENSE">
@@ -14,14 +14,14 @@
 
 ## 特性
 
-- **合并样式**: 将多个样式对象或数组合并为一个
-- **处理样式**: 根据特定条件或输入处理样式
-- **灵活格式**: 支持样式对象、数组或字符串格式
+- **合并样式**: 将多个样式对象、数组或字符串合并为一个
+- **处理样式**: 根据输入或条件动态处理样式
+- **灵活格式**: 支持对象、数组或 CSS 字符串格式的样式
 - **轻量级**: 一个没有依赖的小工具
 
 ## 安装
 
-你可以通过 npm 安装 `cssmix`：
+使用 npm 安装 `cssmix`：
 
 ```bash
 npm install cssmix
@@ -29,11 +29,11 @@ npm install cssmix
 
 ## 使用
 
-以下是一些常见的 `cssmix` 使用示例，展示如何合并和处理样式：
+cssmix 支持多种样式组合与处理方式，以下是一些常见场景的示例:：
 
 ### 1. 合并样式对象
 
-你可以将多个样式对象合并成一个。如果有重复的属性，后面的属性将覆盖前面的属性
+将多个样式对象合并为一个。如果存在重复的样式属性，后面的值会覆盖前面的值
 
 ```js
 import cssmix from 'cssmix';
@@ -43,24 +43,24 @@ const style2 = { backgroundColor: 'blue', fontSize: '16px' };
 
 const combinedStyle = cssmix(style1, style2);
 console.log(combinedStyle);
-// Output { color: 'red', fontSize: '16px', backgroundColor: 'blue' }
+// Output: { color: 'red', fontSize: '16px', backgroundColor: 'blue' }
 ```
 
 ### 2. 合并样式数组
 
-你还可以传递样式对象或字符串的数组，`cssmix` 会将它们合并成一个样式对象
+可以传入样式数组（对象或字符串），cssmix 会将它们合并为一个
 
 ```js
 const styles = [{ color: 'green' }, 'background-color: yellow;', { padding: '10px' }];
 
 const combinedStyles = cssmix(...styles);
 console.log(combinedStyles);
-// Output: { color: 'green', 'background-color': 'yellow', padding: '10px' }
+// Output: { color: 'green', backgroundColor: 'yellow', padding: '10px' }
 ```
 
 ### 3. 条件样式
 
-你可以根据条件动态应用样式
+根据条件动态应用样式，例如应用程序状态或用户设置
 
 ```js
 const isDarkMode = true;
@@ -78,13 +78,30 @@ console.log(activeStyle);
 ### `cssmix(...styles)`
 
 - **Parameters**: 接受样式对象、数组和字符串的混合
-- **Returns**: 合并后的样式对象
+- **Returns**: 一个合并后的样式对象，其中：
+  - 嵌套对象会被展开，例如 { margin: { top: '10px' } } → { marginTop: '10px' }
+  - 重复的键会被覆盖，后面出现的值优先
 
 ### 示例：
 
 ```js
 cssmix({ color: 'blue' }, { fontSize: '18px' });
 // Output: { color: 'blue', fontSize: '18px' }
+```
+
+```js
+cssmix(['padding: 10px;', { margin: '5px' }, { margin: { top: '10px', bottom: '20px' } }]);
+// Output: { padding: '10px', margin: '5px', marginTop: '10px', marginBottom: '20px' }
+```
+
+```js
+cssmix(null, undefined, false, '', {}, { color: 'red' });
+// Output: { color: 'red' }
+```
+
+```js
+cssmix({ color: 'red' }, { color: 'blue', fontSize: '14px' });
+// Output: { color: 'blue', fontSize: '14px' }
 ```
 
 ## 其他

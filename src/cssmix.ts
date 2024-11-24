@@ -1,10 +1,10 @@
 export type StyleInput = StyleInput[] | StyleObject | StyleValue;
 
 export interface StyleObject {
-  [key: string]: StyleInput | StyleValue;
+  [key: string]: StyleInput;
 }
 
-export type StyleValue = boolean | null | number | string | undefined;
+export type StyleValue = boolean | null | number | string | undefined | unknown;
 
 /**
  * Combines multiple style inputs into a single style object.

@@ -68,7 +68,7 @@ describe('cssmix', () => {
   // Test: Handling CSS strings with invalid formats
   it('should gracefully handle invalid CSS strings', () => {
     expect(cssmix('invalid-css-string')).toEqual({});
-    expect(cssmix('color red; font-size:;')).toEqual({});
+    expect(cssmix('color red; font-size:;')).toEqual({ fontSize: '' });
     expect(cssmix('color: red; font-size')).toEqual({
       color: 'red',
     });

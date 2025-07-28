@@ -20,4 +20,11 @@ export default config(
   },
   perfectionist.configs['recommended-natural'],
   eslintConfigPrettier,
+  {
+    rules: {
+      '@typescript-eslint/consistent-type-imports': 'error',
+      '@typescript-eslint/no-explicit-any': 'off',
+      curly: 'error',
+    },
+  },
 );
